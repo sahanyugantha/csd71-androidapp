@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -19,6 +21,7 @@ public class MainActivity extends AppCompatActivity {
         Log.i(TAG, "onCreate");
 
 
+        //CLICK ME BUTTON...
         Button btn_click = (Button) findViewById(R.id.btnClickMe);
         btn_click.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,6 +30,31 @@ public class MainActivity extends AppCompatActivity {
                 toast.show();
             }
         });
+
+
+        //BMI CALCULATOR...
+        EditText etWeight = (EditText) findViewById(R.id.etWeight);
+        EditText etHeight = (EditText) findViewById(R.id.etHeight);
+        Button btnCalculate = (Button) findViewById(R.id.btnCalculate);
+        TextView tvResult = (TextView) findViewById(R.id.tvValue);
+
+        btnCalculate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String weight = etWeight.getText().toString();//BMI = kg/m2
+                String height = etHeight.getText().toString();
+
+                float weightF = Float.parseFloat(weight);
+                float heightF = Float.parseFloat(height);
+
+                float result = weightF/(heightF*heightF);
+
+                tvResult.setText("Your BMI : "+result);
+
+            }
+        });
+
+
 
     }
 
