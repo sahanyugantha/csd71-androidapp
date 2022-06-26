@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -45,9 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 String height = etHeight.getText().toString();
 
                 float weightF = Float.parseFloat(weight);
-                float heightF = Float.parseFloat(height);
+                float heightF = Float.parseFloat(height)/100;
 
-                float result = weightF/(heightF*heightF);
+                float result = (float)(Math.round((weightF/(heightF*heightF))*10))/10;
 
                 tvResult.setText("Your BMI : "+result);
 
@@ -56,6 +57,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
     }
 
     @Override

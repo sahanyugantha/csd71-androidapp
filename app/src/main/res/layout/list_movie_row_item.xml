@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#510202">
+
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:columnCount="2"
+        android:rowCount="7"
+        android:background="#7A0B02">
+
+        <TextView
+            android:id="@+id/tvMovieTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="N/A"
+            android:padding="5dp"
+            android:textColor="#fff"
+            android:textSize="20sp"
+            android:layout_row="0"
+            android:layout_column="0"/>
+        <ImageView
+            android:id="@+id/imgBookmark"
+            android:layout_height="36dp"
+            android:layout_width="36dp"
+            android:src="@drawable/ic_baseline_bookmark_24"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:padding="5dp"
+            android:layout_gravity="end"/>
+        <ImageView
+            android:id="@+id/imgMovieCover"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:src="@drawable/ic_baseline_movie_filter_24"
+            android:layout_column="0"
+            android:layout_row="1"
+            android:layout_columnSpan="2"/>
+
+        <TextView
+            android:id="@+id/tvYear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="2"
+            android:text="0000"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="#D5D4D4"
+            android:hint="Year"
+            android:textStyle="bold"/>
+        <TextView
+            android:id="@+id/tvLanguages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="2"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="#D5D4D4"
+            android:layout_gravity="end"
+            android:text="N/A"/>
+
+        <RatingBar
+            android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:progressTint="#FFEB3B"
+            android:progressBackgroundTint="#FFFFFF"
+            android:numStars="5"
+            android:layout_column="0"
+            android:layout_row="3"
+            android:padding="5dp"/>
+
+        <TextView
+            android:id="@+id/tvOverallRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="1"
+            android:layout_row="3"
+            android:paddingTop="20dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFEB3B"
+            android:layout_gravity="end"
+            android:text="N/A"/>
+
+        <TextView
+            android:id="@+id/tvGenres"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="4"
+            android:padding="5dp"
+            android:textSize="18sp"
+            android:textColor="#D5D4D4"
+            android:layout_columnSpan="2"
+            android:text="N/A"/>
+
+        <TextView
+            android:id="@+id/tvDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="5"
+            android:paddingTop="10dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="16sp"
+            android:textColor="#D5D4D4"
+            android:layout_columnSpan="2"
+            android:text="N/A"/>
+        <TextView
+            android:id="@+id/tvMoreDetails"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_column="0"
+            android:layout_row="6"
+            android:layout_gravity="end"
+            android:paddingTop="3dp"
+            android:paddingBottom="10dp"
+            android:paddingStart="5dp"
+            android:paddingEnd="5dp"
+            android:textSize="12sp"
+            android:textStyle="bold"
+            android:textColorLink="#fff"
+            android:textColor="#8F9EED"
+            android:layout_columnSpan="2"
+            android:text="Read more"/>
+
+    </GridLayout>
+
+</androidx.cardview.widget.CardView>
