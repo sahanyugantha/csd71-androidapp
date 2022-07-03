@@ -1,4 +1,4 @@
-package com.sahan.csd71app;
+package com.sahan.csd71app.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -10,6 +10,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
+
+import com.sahan.csd71app.R;
 
 public class HomeActivity extends AppCompatActivity {
 
