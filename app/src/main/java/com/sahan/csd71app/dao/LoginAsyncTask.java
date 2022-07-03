@@ -17,7 +17,6 @@ import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.OutputStreamWriter;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.net.URLEncoder;
 
@@ -49,22 +48,16 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, User> {
             httpURLConnection.setDoInput(true);//downloads?
             httpURLConnection.setDoOutput(true);//upload
 
-            Log.i(TAG, "Reach 1");
-            String data = "email="+URLEncoder.encode(email,"utf-8")+"&"+
-                            "password="+ URLEncoder.encode(password,"utf-8");
-
             JSONObject objData = new JSONObject();
             objData.put("email", URLEncoder.encode(email,"utf-8"));
             objData.put("password", URLEncoder.encode(password,"utf-8"));
 
             String jsonString = objData.toString();
-            Log.i(TAG, "Reach 2 "+jsonString);
 
             OutputStream outputStream = httpURLConnection.getOutputStream();
             OutputStreamWriter outputStreamWriter = new OutputStreamWriter(outputStream, "utf-8");
             BufferedWriter bufferedWriter = new BufferedWriter(outputStreamWriter);
 
-            Log.i(TAG, "Reach 3 ");
             bufferedWriter.write(jsonString);
             bufferedWriter.flush();
             bufferedWriter.close();

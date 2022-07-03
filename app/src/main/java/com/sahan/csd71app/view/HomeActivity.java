@@ -9,6 +9,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.sahan.csd71app.R;
@@ -19,6 +20,12 @@ public class HomeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
+
+        TextView tvName = (TextView) findViewById(R.id.tvName);
+
+        Bundle bundle = getIntent().getExtras();
+        String name = bundle.getString("NAME");
+        tvName.setText(name);
 
         Button btnBmiChecker = (Button) findViewById(R.id.btnOpenBmiChecker);
         btnBmiChecker.setOnClickListener(new View.OnClickListener() {

@@ -2,6 +2,7 @@ package com.sahan.csd71app.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -30,6 +31,7 @@ public class LoginActivity extends AppCompatActivity {
         btnSignIn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String email = etEmail.getText().toString();
                 String password = etPass.getText().toString();
 
@@ -40,6 +42,16 @@ public class LoginActivity extends AppCompatActivity {
                     if (user != null && user.isLogged_in()){
                         Log.i(TAG, "YEAH!");
                         Toast.makeText(getApplicationContext(), "Successfully logged in ", Toast.LENGTH_SHORT).show();
+
+                        Intent intent = new Intent(getApplicationContext(), HomeActivity.class);
+
+                        String name = user.getEmail();
+                        Bundle bundle = new Bundle();
+                        bundle.putString("NAME", name);
+                        intent.putExtras(bundle);
+
+                        startActivity(intent);
+
                     } else {
                         Log.i(TAG, "NOPE!");
                         Toast.makeText(getApplicationContext(), "Logging failed!", Toast.LENGTH_SHORT).show();
