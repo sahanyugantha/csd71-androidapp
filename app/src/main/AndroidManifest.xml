@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CSD71App"
         android:usesCleartextTraffic="true"
+        android:allowClearUserData="true"
         tools:targetApi="31">
         <activity
             android:name=".view.LoginActivity"

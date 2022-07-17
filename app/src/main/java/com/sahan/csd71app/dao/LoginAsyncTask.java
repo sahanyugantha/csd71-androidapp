@@ -1,5 +1,7 @@
 package com.sahan.csd71app.dao;
 
+import static com.sahan.csd71app.configs.EndPoints.LOGIN_URL;
+
 import android.os.AsyncTask;
 import android.util.Log;
 
@@ -23,7 +25,6 @@ import java.net.URLEncoder;
 public class LoginAsyncTask extends AsyncTask<Void, Void, User> {
 
     private static final String TAG = "customTag2";
-    private static final String LOGIN_URL = "http://10.0.2.2:8000/csd71/auth-api.php";
 
 
     private String email;
