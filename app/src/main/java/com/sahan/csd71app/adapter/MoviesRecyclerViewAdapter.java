@@ -1,6 +1,7 @@
 package com.sahan.csd71app.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -47,6 +48,8 @@ public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesRecycl
     private Context context;
     private List<Movie> movieList;
 
+    private static final String TAG = "ratingTag";
+
     public MoviesRecyclerViewAdapter(Context context, List<Movie> movieList) {
         this.context = context;
         this.movieList = movieList;
@@ -75,6 +78,13 @@ public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesRecycl
                 .with(context)
                 .load(movie.getCoverURL())
                 .into(holder.imgMovieCover);
+        holder.ratingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
+            @Override
+            public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
+                Log.i(TAG, movie.getName()+ " Rating - "+v);
+                //2
+            }
+        });
 
     }
 
