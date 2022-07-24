@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager2.widget.ViewPager2;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -42,9 +43,7 @@ public class HomeActivity extends AppCompatActivity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        MenuItem settings_item = menu.add("About");
         getMenuInflater().inflate(R.menu.main_menu, menu);
-
         return super.onCreateOptionsMenu(menu);
     }
 
@@ -60,6 +59,11 @@ public class HomeActivity extends AppCompatActivity {
             case R.id.menuSettings:
                 Toast.makeText(getApplicationContext(), "Settings...", Toast.LENGTH_SHORT).show();
                 break;
+            case R.id.menuAbout:
+                Intent intent = new Intent(getApplicationContext(), MapsActivity.class);
+                startActivity(intent);
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);

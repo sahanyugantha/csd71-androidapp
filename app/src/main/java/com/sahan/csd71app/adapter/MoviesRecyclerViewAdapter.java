@@ -74,6 +74,7 @@ public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesRecycl
         holder.tvGenres.setText(movie.getGenre());
         holder.tvDuration.setText(movie.getDuration());
         holder.tvOverallRating.setText("0.0");
+
         Glide
                 .with(context)
                 .load(movie.getCoverURL())
@@ -85,7 +86,6 @@ public class MoviesRecyclerViewAdapter extends RecyclerView.Adapter<MoviesRecycl
                 //2
             }
         });
-
     }
 
     @Override
