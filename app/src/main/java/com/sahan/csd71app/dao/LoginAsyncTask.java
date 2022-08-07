@@ -35,6 +35,11 @@ public class LoginAsyncTask extends AsyncTask<Void, Void, User> {
         this.password = password;
     }
 
+    //This is just to learn Unit Testing.
+    public int addNumbers(int num1, int num2){
+        return num1+num2;
+    }
+
     @Override
     protected User doInBackground(Void... voids) {
         User user = new User();

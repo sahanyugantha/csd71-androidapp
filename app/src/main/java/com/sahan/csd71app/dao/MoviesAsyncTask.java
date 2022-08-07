@@ -22,6 +22,10 @@ public class MoviesAsyncTask extends AsyncTask<Void,Void, List<Movie>> {
 
     @Override
     protected List<Movie> doInBackground(Void... voids) {
+        return getMovieList();
+    }
+
+    public List<Movie> getMovieList(){
         try {
             URL url = new URL(MOVIE_URL);
             HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
@@ -44,7 +48,6 @@ public class MoviesAsyncTask extends AsyncTask<Void,Void, List<Movie>> {
 
                 String jsonString = sb.toString();
                 JSONArray array = new JSONArray(jsonString);
-
                 List<Movie> movieList = new ArrayList<>();
                 for (int i = 0; i < array.length(); i++) {
                     JSONObject obj = array.getJSONObject(i);
@@ -68,3 +71,5 @@ public class MoviesAsyncTask extends AsyncTask<Void,Void, List<Movie>> {
         return null;
     }
 }
+
+
